@@ -22,7 +22,7 @@ export class App extends Component {
 
   componentDidMount() {
     const contacts = localStorage.getItem(CONTACT_KEY);
-    this.setState({ contacts: JSON.parse(contacts) });
+    if (contacts) this.setState({ contacts: JSON.parse(contacts) });
   }
 
   componentDidUpdate(prevProps, prevState) {
